@@ -74,7 +74,8 @@ class MainActivity : AppCompatActivity() {
                     resultImageView.contentDescription = diceRollResult.toString()
                     rollButton.visibility = View.VISIBLE
                 }
-            }.start()
+            }
+            countDown.start()
         }
         rollAnimation()
     }

@@ -33,6 +33,7 @@
         android:layout_width="160dp"
         android:layout_height="200dp"
         android:contentDescription="@string/dice_image"
+        android:rotation="0"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
