@@ -2,4 +2,5 @@
     <string name="app_name">DiceRoller</string>
     <string name="roll">Roll</string>
     <string name="dice_image">An image of a dice</string>
+    <string name="rolling_message">Rolling!</string>
 </resources>
