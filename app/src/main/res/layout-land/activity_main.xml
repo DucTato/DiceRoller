@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/rollButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/roll"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/redText" />
+
+    <TextView
+        android:id="@+id/redText"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+
+        android:textSize="30sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/orangeText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/blueText"
+        app:layout_constraintTop_toBottomOf="@id/redDiceView"
+        tools:text="Red" />
+
+    <TextView
+        android:id="@+id/purpleText"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/blueText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/purpleDiceView"
+        tools:text="Purple" />
+
+    <TextView
+        android:id="@+id/orangeText"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/redText"
+        app:layout_constraintTop_toBottomOf="@id/orangeDiceView"
+        tools:text="Orange" />
+
+    <TextView
+        android:id="@+id/blueText"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/redText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/purpleText"
+        app:layout_constraintTop_toBottomOf="@id/blueDiceView"
+        tools:text="Blue" />
+
+    <ImageView
+        android:id="@+id/redDiceView"
+        android:layout_width="140dp"
+        android:layout_height="180dp"
+        android:contentDescription="@string/dice_image"
+        android:rotation="0"
+        app:layout_constraintBottom_toTopOf="@+id/redText"
+        app:layout_constraintEnd_toStartOf="@+id/orangeDiceView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/blueDiceView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:srcCompat="@drawable/dice_1" />
+
+    <ImageView
+        android:id="@+id/blueDiceView"
+        android:layout_width="140dp"
+        android:layout_height="180dp"
+        android:contentDescription="@string/dice_image"
+        app:layout_constraintEnd_toStartOf="@+id/redDiceView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/purpleDiceView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bdice_1" />
+
+    <ImageView
+        android:id="@+id/orangeDiceView"
+        android:layout_width="140dp"
+        android:layout_height="180dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/dice_image"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/redDiceView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/odice_1" />
+
+    <ImageView
+        android:id="@+id/purpleDiceView"
+        android:layout_width="140dp"
+        android:layout_height="180dp"
+        android:contentDescription="@string/dice_image"
+        app:layout_constraintEnd_toStartOf="@+id/blueDiceView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pdice_1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

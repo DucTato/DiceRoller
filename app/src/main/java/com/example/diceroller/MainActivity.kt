@@ -4,23 +4,19 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.diceroller.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    lateinit var activityBinding : ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val rollButton: Button = findViewById(R.id.button)
-        rollButton.setOnClickListener {
-//            val rollMessage: Toast = Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT)
-//            rollMessage.show()
-//            val resultTextView: TextView = findViewById(R.id.textView)
-//            resultTextView.text = "6"
-            rollDice()
-        }
+        activityBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(activityBinding.root)
+        activityBinding.rollButton.setOnClickListener { rollDice() }
         rollDice()
     }
 
@@ -31,21 +27,13 @@ class MainActivity : AppCompatActivity() {
         /**
          * This part is for updating the textView component
          **/
-        val resultTextView: TextView = findViewById(R.id.textView)
+        val resultTextView: TextView = findViewById(R.id.redText)
 
         /**
          * This part is for updating the imageView component
          **/
-        val resultImageView: ImageView = findViewById(R.id.imageView)
+        val resultImageView: ImageView = findViewById(R.id.redDiceView)
 
-        //        when (diceRollResult) {
-//            1 -> resultImageView.setImageResource(R.drawable.dice_1)
-//            2 -> resultImageView.setImageResource(R.drawable.dice_2)
-//            3 -> resultImageView.setImageResource(R.drawable.dice_3)
-//            4 -> resultImageView.setImageResource(R.drawable.dice_4)
-//            5 -> resultImageView.setImageResource(R.drawable.dice_5)
-//            6 -> resultImageView.setImageResource(R.drawable.dice_6)
-//        }
         fun setDiceFace(face: Int) {
             val diceFace = when (face) {
                 1 -> R.drawable.dice_1
@@ -61,10 +49,9 @@ class MainActivity : AppCompatActivity() {
 
         @SuppressLint("SetTextI18n")
         fun rollAnimation() {
-            val rollButton : Button = findViewById(R.id.button)
-            rollButton.visibility = View.INVISIBLE
+            activityBinding.rollButton.visibility = View.INVISIBLE
             resultTextView.text = getString(R.string.rolling_message)
-            val countDown = object : CountDownTimer(3000, 250) {
+            val countDown = object : CountDownTimer(3000, 200) {
                 override fun onTick(p0: Long) {
                     setDiceFace((1..6).random())
                 }
@@ -72,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                     setDiceFace(diceRollResult)
                     resultTextView.text = diceRollResult.toString()
                     resultImageView.contentDescription = diceRollResult.toString()
-                    rollButton.visibility = View.VISIBLE
+                    activityBinding.rollButton.visibility = View.VISIBLE
                 }
             }
             countDown.start()

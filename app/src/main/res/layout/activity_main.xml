@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/redText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="36sp"
@@ -19,22 +19,23 @@
         tools:text="Dice Rolled" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/rollButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/roll"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/redText" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/redDiceView"
         android:layout_width="160dp"
         android:layout_height="200dp"
         android:contentDescription="@string/dice_image"
         android:rotation="0"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/redText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:srcCompat="@drawable/dice_1" />
